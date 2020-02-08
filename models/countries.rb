@@ -17,6 +17,12 @@ attr_reader :name, :id, :continent_id
     @id = results.first()['id'].to_i
   end
 
+def self.all()
+  sql = "SELECT * FROM countries"
+  results = SqlRunner.run(sql)
+  return results.map{ |country| Country.new(country)}
+end
+
   def self.delete_all()
     sql = "DELETE FROM countries"
     SqlRunner.run(sql)

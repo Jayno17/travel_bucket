@@ -1,8 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative( '../models/continents.rb' )
-require_relative( '../models/countries' )
-require_relative('..models/cities')
+require_relative( '../models/continents' )
 also_reload( '../models/*' )
 
 get '/continets' do

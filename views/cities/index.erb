@@ -1,13 +1,7 @@
 <h1>Cities</h1>
 
-<div id="city-wrapper">
-  <%  @cities.each do |city| %>
-<div class="city">
-  <h3><a href="/cities/<%= city.id %>"></a></h3>
-</div>
-
-
-
-
-  <% end %>
-</div>
+<% @cities.each do |city| %>
+  <p>Name: <%= city.name() %></p>
+  <p>Country: <%= city.country_id %> </p>
+  <hr />
+<% end %>
