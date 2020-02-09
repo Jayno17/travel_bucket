@@ -1,0 +1,7 @@
+<h1>Countries</h1>
+
+<% @countries.each do |country| %>
+  <p>Country: <a href="/countries/<%= country.id %>"><%= country.name %></a></p>
+  <p>Continent: <a href="/countries/<%= country.continent %>"><%= country.continent.name %></a></p>
+  <hr />
+<% end %>

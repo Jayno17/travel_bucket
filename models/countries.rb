@@ -30,6 +30,13 @@ attr_reader :name, :id, :continent_id
    SqlRunner.run(sql, values)
  end
 
+ def continent()
+   sql = "SELECT * FROM continents WHERE id = $1"
+   values = [@continent_id]
+   results = SqlRunner.run(sql, values)
+   return Continent.new(results.first)
+ end
+
 def self.all()
   sql = "SELECT * FROM countries"
   results = SqlRunner.run(sql)
