@@ -1,7 +1,7 @@
 <h1>Cities</h1>
 
 <% @cities.each do |city| %>
-  <p>Name: <%= city.name() %></p>
-  <p>Country: <%= city.country_id %> </p>
+  <p>Name: <a href="/cities/<%= city.id %>"><%= city.name %></a></p>
+  <p>Country: <a href="/cities/<%= city.country %>"><%= city.country.name %></a> </p>
   <hr />
 <% end %>
