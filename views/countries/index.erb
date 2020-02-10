@@ -2,6 +2,6 @@
 
 <% @countries.each do |country| %>
   <p>Country: <a href="/countries/<%= country.id %>"><%= country.name %></a></p>
-  <p>Continent: <a href="/countries/<%= country.continent %>"><%= country.continent.name %></a></p>
+  <p>Cities: <a href="/countries/<%= country.city %>"><%= country.city.name %></a></p>
   <hr />
 <% end %>

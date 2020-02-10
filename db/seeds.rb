@@ -73,5 +73,11 @@ city4 = City.new({
   })
 city4.save
 
+city5 = City.new({
+  "name" => "Cape Town",
+  "country_id" => country1.id
+  })
+  city5.save
+
 binding.pry
 nil

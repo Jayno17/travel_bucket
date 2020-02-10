@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require('pry-byebug')
 
 class Country
 
@@ -8,6 +9,7 @@ attr_reader :name, :id, :continent_id
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @continent_id = options['continent_id'].to_i
+
   end
 
   def save()
@@ -29,6 +31,13 @@ attr_reader :name, :id, :continent_id
    values = [@id]
    SqlRunner.run(sql, values)
  end
+
+def city()
+  sql = "SELECT * FROM cities WHERE country_id = $1"
+  values = [@id]
+  results = SqlRunner.run(sql, values)
+  return City.new(results.first)
+end
 
  def continent()
    sql = "SELECT * FROM continents WHERE id = $1"
@@ -55,3 +64,5 @@ end
     SqlRunner.run(sql)
   end
 end
+# binding.pry
+# nil
