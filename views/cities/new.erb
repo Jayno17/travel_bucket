@@ -1,0 +1,25 @@
+<h1>Add New City</h1>
+
+<form action="/cities" method="POST">
+  <!-- <div class="form-wrapper">
+
+  <div class="form-el"> -->
+    <label for="country">Choose Country:</label>
+    <select name="country_id" id="country_select">
+        <% @countries.each do |country| %>
+            <option value=<%= country.id %>><%= country.name %></option>
+        <% end %>
+      </select>
+  <!-- </div> -->
+
+  <div class="form-el">
+      <label for="city">City:</label>
+      <input type="text" name="name" id="city"/>
+    </div>
+
+    <div class="form-el">
+          <input type="submit" value="Add"/>
+        </div>
+<!-- </div> -->
+
+</form>

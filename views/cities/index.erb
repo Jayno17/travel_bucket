@@ -1,7 +1,11 @@
 <h1>Cities</h1>
 
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/cities/new">Add a new destination</a>
+</p>
+
 <% @cities.each do |city| %>
   <p>Name: <a href="/cities/<%= city.id %>"><%= city.name %></a></p>
-  <p>Country: <a href="/cities/<%= city.country %>"><%= city.country.name %></a> </p>
+
+  <% end %>
   <hr />
-<% end %>

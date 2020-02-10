@@ -34,7 +34,7 @@ attr_reader(:name, :id)
    sql = "SELECT * FROM countries WHERE id = $1"
    values = [@country_id]
    results = SqlRunner.run(sql, values)
-   return Country.new(results.first)
+   return results.map { |country| Country.new(country)}
  end
 
   def self.all()

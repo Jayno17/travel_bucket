@@ -16,5 +16,5 @@ CREATE TABLE countries(
 CREATE TABLE cities(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
-  country_id INT references countries(id)
+  country_id INT references countries(id) ON DELETE CASCADE
 );

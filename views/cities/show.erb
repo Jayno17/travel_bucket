@@ -1,0 +1,6 @@
+<h2><%= @city.name %></h2>
+
+<p>Country: <%= @city.country.name %></p>
+
+<a href="/cities/<%= @city.id %>/edit">Edit</a>
+<form action="/cities/<%= @city.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

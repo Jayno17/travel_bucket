@@ -36,7 +36,7 @@ def city()
   sql = "SELECT * FROM cities WHERE country_id = $1"
   values = [@id]
   results = SqlRunner.run(sql, values)
-  return City.new(results.first)
+  return results.map{ |city| City.new(city) }
 end
 
  def continent()
