@@ -18,7 +18,7 @@ attr_reader :name, :id
 
   def self.all()
     sql = "SELECT * FROM continents"
-    results = SqlRunner.sql(sql)
+    results = SqlRunner.run(sql)
     return results.map { |continent| Continent.new(continent)}
   end
 

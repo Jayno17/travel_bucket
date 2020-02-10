@@ -43,7 +43,7 @@ attr_reader(:name, :id)
     return results.map { |city| City.new(city) }
   end
 
-  def self.find()
+  def self.find(id)
     sql = "SELECT * FROM cities WHERE id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)

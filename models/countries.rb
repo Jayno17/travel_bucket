@@ -1,5 +1,5 @@
 require_relative('../db/sql_runner')
-require('pry-byebug')
+# require('pry-byebug')
 
 class Country
 
@@ -52,7 +52,7 @@ def self.all()
   return results.map{ |country| Country.new(country)}
 end
 
-def self.find()
+def self.find(id)
   sql = "SELECT * FROM countries WHERE id = $1"
   values = [@id]
   results = SqlRunner.run(sql, values)

@@ -1,0 +1,25 @@
+<h1>Add New Destination</h1>
+
+<form action="/countries" method="POST">
+  <!-- <div class="form-wrapper">
+
+  <div class="form-el"> -->
+    <label for="continent">Choose Continent:</label>
+    <select name="continent_id" id="continent_select">
+        <% @continents.each do |continent| %>
+            <option value=<%= continent.id %>><%= continent.name %></option>
+        <% end %>
+      </select>
+  <!-- </div> -->
+
+  <div class="form-el">
+      <label for="country">Country:</label>
+      <input type="text" name="name" id="country"/>
+    </div>
+      
+    <div class="form-el">
+          <input type="submit" value="Add"/>
+        </div>
+<!-- </div> -->
+
+</form>
