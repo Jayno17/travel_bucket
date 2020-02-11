@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class City
 
-attr_reader(:name, :id)
+attr_reader(:name, :id, :visited, :country_id)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -21,7 +21,7 @@ attr_reader(:name, :id)
   def update()
     sql = "UPDATE cities SET (name, country_id, visited)
     = ($1, $2, $3) WHERE id = $4"
-    values = [@name, @country_id, @visited]
+    values = [@name, @country_id, @visited, @id]
     SqlRunner.run(sql, values)
   end
 

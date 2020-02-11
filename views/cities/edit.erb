@@ -3,16 +3,19 @@
 
 <div>
   <label for="cities">City:</label>
-  <input type="text" name="cities" id="city_id" value="<%= @city.name %>"/>
+  <input type="text" name="name" id="city_id" value="<%= @city.name %>"/>
 
 </div>
 
 <div>
-
-
 <label for="city-visited-checkbox">Visited?</label>
-<input type="radio" name="visited" value="true">YES</input>
-<input type="radio" name="visited" value="false">NO</input>
+<% if @city.visited == 't' %>
+  <input type="radio" name="visited" value="true" checked="checked">YES</input>
+  <input type="radio" name="visited" value="false">NO</input>
+<% else %>
+  <input type="radio" name="visited" value="true">YES</input>
+  <input type="radio" name="visited" value="false" checked="checked">NO</input>
+<% end %>
 </div>
 
 <label for="country_select">Select Country:</label>
