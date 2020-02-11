@@ -1,0 +1,18 @@
+<h2>Edit <%= @city.name %></h2>
+<form method="POST" action="/cities/<%= @city.id %>">
+
+<div>
+  <label for="cities">City:</label>
+  <input type="text" name="cities" id="city_id" value="<%= @city.name %>"/>
+</div>
+
+<label for="country_select">Select Country:</label>
+      <select name="country_id" id="country_select" selected="<%= @city.country  %>">
+        <% @countries.each do |country| %>
+          <% if country.id == @city.country %>
+            <option value=<%= country.id %> selected><%= country.name %></option>
+          <% else %>
+            <option value=<%= country.id %>><%= country.name%></option>
+          <% end %>
+        <% end %>
+      </select>

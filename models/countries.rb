@@ -32,6 +32,7 @@ attr_reader :name, :id, :continent_id
    SqlRunner.run(sql, values)
  end
 
+# Rename to def cities()
 def city()
   sql = "SELECT * FROM cities WHERE country_id = $1"
   values = [@id]

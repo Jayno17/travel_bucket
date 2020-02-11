@@ -5,9 +5,9 @@
 </p>
 <% @countries.each do |country| %>
   <p>Country: <a href="/countries/<%= country.id %>"><%= country.name %></a></p>
-  <p>Cities:
-    <% for city in city.country %>
-      <a href="/cities/<%= city.id %>"><%= city.name %></a></p>
+Cities:
+    <% for city in country.city %>
+        <p><a href="/cities/<%= city.id %>"><%= city.name %></a></p>
     <% end %>
   <hr />
 

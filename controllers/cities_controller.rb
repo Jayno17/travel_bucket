@@ -1,5 +1,5 @@
-require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require('pry-byebug')
+
 require_relative( '../models/cities' )
 require_relative( '../models/countries' )
 also_reload( '../models/*' )
@@ -19,7 +19,19 @@ post '/cities' do
   redirect '/cities'
 end
 
+get '/cities/:id/edit' do
+  @countries = Country.all
+  @city = City.find(params['id'])
+  erb(:'cities/edit')
+end
+
 get '/cities/:id' do
   @city = City.find(params['id'])
   erb (:show)
+end
+
+post '/cities/:id' do
+  city = City.new(params)
+  city.update
+  redirect to "/cities/#{params['id']}"
 end

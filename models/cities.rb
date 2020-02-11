@@ -45,9 +45,13 @@ attr_reader(:name, :id)
 
   def self.find(id)
     sql = "SELECT * FROM cities WHERE id = $1"
-    values = [@id]
+    values = [id.to_i]
     results = SqlRunner.run(sql, values)
+    # if results == nil
+    #   return nil
+    # else
     return City.new(results.first)
+  # end
   end
 
   def self.delete_all()
