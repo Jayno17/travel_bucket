@@ -8,19 +8,20 @@ attr_reader(:name, :id)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @country_id = options['country_id'].to_i
+    @visited = options['visited']
   end
 
   def save()
-    sql = "INSERT INTO cities (name, country_id) VALUES ($1, $2) RETURNING id"
-    values = [@name, @country_id]
+    sql = "INSERT INTO cities (name, country_id, visited) VALUES ($1, $2, $3) RETURNING id"
+    values = [@name, @country_id, @visited]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE cities SET (name, country_id)
-    = ($1, $2) WHERE id = $3"
-    values = [@name, @country_id]
+    sql = "UPDATE cities SET (name, country_id, visited)
+    = ($1, $2, $3) WHERE id = $4"
+    values = [@name, @country_id, @visited]
     SqlRunner.run(sql, values)
   end
 
@@ -34,7 +35,8 @@ attr_reader(:name, :id)
    sql = "SELECT * FROM countries WHERE id = $1"
    values = [@country_id]
    results = SqlRunner.run(sql, values)
-   return results.map { |country| Country.new(country)}
+   return Country.new(results.first)
+   # return results.map { |country| Country.new(country)}
  end
 
   def self.all()

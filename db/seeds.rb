@@ -51,31 +51,36 @@ country5.save
 
 city1 = City.new({
   "name" => "Delhi",
-  "country_id" => country5.id
+  "country_id" => country5.id,
+  "visited" => true
   })
 city1.save
 
 city2 = City.new({
   "name" => "Sydney",
-  "country_id" => country4.id
+  "country_id" => country4.id,
+  "visited" => false
   })
 city2.save
 
 city3 = City.new({
   "name" => "Toronto",
-  "country_id" => country3.id
+  "country_id" => country3.id,
+  "visited" => "true"
   })
 city3.save
 
 city4 = City.new({
   "name" => "Paris",
-  "country_id" => country2.id
+  "country_id" => country2.id,
+  "visited" => true
   })
 city4.save
 
 city5 = City.new({
   "name" => "Cape Town",
-  "country_id" => country1.id
+  "country_id" => country1.id,
+  "visited" => true
   })
   city5.save
 

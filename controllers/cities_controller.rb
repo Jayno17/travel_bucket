@@ -27,11 +27,17 @@ end
 
 get '/cities/:id' do
   @city = City.find(params['id'])
-  erb (:show)
+  erb (:'cities/show')
 end
 
 post '/cities/:id' do
   city = City.new(params)
   city.update
-  redirect to "/cities/#{params['id']}"
+  redirect to "/cities"
+end
+
+post '/cities/:id/delete' do
+  city = City.find(params['id'])
+  city.delete
+  redirect to '/cities'
 end

@@ -1,0 +1,21 @@
+<h2>Edit <%= @country.name %></h2>
+<form  action="/countries/ <%= @country.id %>" method="post">
+
+  <div>
+    <label for="countries">Country:</label>
+    <input type="text" name="countries"  id="country_id" value="<%= @country.name %>"/>
+  </div>
+
+  <label for="continent_select">Select Continent:</label>
+  <select name="continent_id" id="continent_select" selected="<%= @country.continent %>">
+    <% @continents.each do |continent| %>
+    <% if continent.id == @country.continent %>
+    <option value=<%= continent.id %> selected> <%= continent.name %></option>
+
+    <% else %>
+    <option value= <%= continent.id %>><%= continent.name %></option>
+    <% end %>
+    <% end %>
+  </select>
+
+</form>

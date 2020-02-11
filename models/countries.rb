@@ -55,8 +55,9 @@ end
 
 def self.find(id)
   sql = "SELECT * FROM countries WHERE id = $1"
-  values = [@id]
+  values = [id]
   results = SqlRunner.run(sql, values)
+  # binding.pry
   return Country.new(results.first)
 end
 

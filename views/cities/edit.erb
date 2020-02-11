@@ -4,15 +4,33 @@
 <div>
   <label for="cities">City:</label>
   <input type="text" name="cities" id="city_id" value="<%= @city.name %>"/>
+
+</div>
+
+<div>
+
+
+<label for="city-visited-checkbox">Visited?</label>
+<input type="radio" name="visited" value="true">YES</input>
+<input type="radio" name="visited" value="false">NO</input>
 </div>
 
 <label for="country_select">Select Country:</label>
+
       <select name="country_id" id="country_select" selected="<%= @city.country  %>">
+
         <% @countries.each do |country| %>
-          <% if country.id == @city.country %>
+          <% if country.id == @city.country.id %>
             <option value=<%= country.id %> selected><%= country.name %></option>
+
           <% else %>
             <option value=<%= country.id %>><%= country.name%></option>
           <% end %>
+
         <% end %>
       </select>
+      <div class="form-el">
+        <input type="submit" value="Update"/>
+      </div>
+</form>
+<form action="/cities/<%= @city.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

@@ -15,5 +15,11 @@ end
 
 post '/countries' do
   Country.new(params).save
-  redirect '/countries'
+  redirect to '/countries'
+end
+
+get '/countries/:id' do
+  @continents = Continent.all
+  @country = Country.find(params['id'])
+  erb(:'countries/edit')
 end
