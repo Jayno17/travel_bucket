@@ -1,8 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Asap&display=swap');
+
 body {
   background: lightgrey url('/images/globe.png');
   padding: 30px;
   background-repeat: no-repeat;
   background-size: 100%;
-  font-family: 'Merriweather', serif;
-  ;font-size: 22px;
+}
+
+h1, h2, h3 {
+  font-family: 'Asap', sans-serif;
+  color: midnightblue;
+}
+
+nav {
+  font-family: 'Gloria Hallelujah', cursive;
+  color: darkblue;
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: BlanchedAlmond;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: darkblue;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: lightskyblue;
 }
